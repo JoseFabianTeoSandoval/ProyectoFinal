@@ -7,9 +7,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProyectoFinal.Data.Models
 {
-    internal class PersonajeN
+    internal class PersonajeNaruto
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public int NivelPoder { get; set; }
@@ -17,9 +17,13 @@ namespace ProyectoFinal.Data.Models
         public string Aldea { get; set; }
         public string Rango { get; set; }
 
-        public PersonajeN(int id, string nombre, string apellido, int nivelPoder, DateTime fechaAgregado, string aldea, string rango)
+        // Constructor sin parámetros
+        public PersonajeNaruto() { }
+
+        // Constructor con parámetros
+        public PersonajeNaruto(int id, string nombre, string apellido, int nivelPoder, DateTime fechaAgregado, string aldea, string rango)
         {
-            Id = id;
+            ID = id;
             Nombre = nombre;
             Apellido = apellido;
             NivelPoder = nivelPoder;
@@ -27,6 +31,7 @@ namespace ProyectoFinal.Data.Models
             Aldea = aldea;
             Rango = rango;
         }
+
 
     }
 }

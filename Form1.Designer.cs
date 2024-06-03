@@ -1,4 +1,6 @@
-﻿namespace ProyectoFinal
+﻿using System.Windows.Forms;
+
+namespace ProyectoFinal
 {
     partial class Form1
     {
@@ -41,17 +43,22 @@
             this.textBoxaldea = new System.Windows.Forms.TextBox();
             this.textBoxrango = new System.Windows.Forms.TextBox();
             this.numericUpDownnivelpoder = new System.Windows.Forms.NumericUpDown();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.dateTimePickerfechaagregado = new System.Windows.Forms.DateTimePicker();
             this.comboBoxrango = new System.Windows.Forms.ComboBox();
             this.comboBoxaldea = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttoncargar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonbuscar = new System.Windows.Forms.Button();
+            this.buttonactualizar = new System.Windows.Forms.Button();
+            this.buttoneliminar = new System.Windows.Forms.Button();
             this.buttonCrear = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonnext = new System.Windows.Forms.Button();
+            this.buttonanterior = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownnivelpoder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,19 +163,24 @@
             // numericUpDownnivelpoder
             // 
             this.numericUpDownnivelpoder.Location = new System.Drawing.Point(242, 145);
+            this.numericUpDownnivelpoder.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numericUpDownnivelpoder.Name = "numericUpDownnivelpoder";
             this.numericUpDownnivelpoder.Size = new System.Drawing.Size(120, 26);
             this.numericUpDownnivelpoder.TabIndex = 14;
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 416);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(808, 282);
-            this.dataGridView1.TabIndex = 15;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(45, 416);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 62;
+            this.dataGridView.RowTemplate.Height = 28;
+            this.dataGridView.Size = new System.Drawing.Size(808, 282);
+            this.dataGridView.TabIndex = 15;
             // 
             // dateTimePickerfechaagregado
             // 
@@ -195,6 +207,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonanterior);
+            this.groupBox1.Controls.Add(this.buttonnext);
+            this.groupBox1.Controls.Add(this.buttoncargar);
             this.groupBox1.Location = new System.Drawing.Point(899, 416);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 282);
@@ -202,21 +217,62 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones";
             // 
+            // buttoncargar
+            // 
+            this.buttoncargar.Location = new System.Drawing.Point(59, 50);
+            this.buttoncargar.Name = "buttoncargar";
+            this.buttoncargar.Size = new System.Drawing.Size(87, 42);
+            this.buttoncargar.TabIndex = 0;
+            this.buttoncargar.Text = "Cargar";
+            this.buttoncargar.UseVisualStyleBackColor = true;
+            this.buttoncargar.Click += new System.EventHandler(this.buttoncargar_Click);
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.buttonbuscar);
+            this.groupBox2.Controls.Add(this.buttonactualizar);
+            this.groupBox2.Controls.Add(this.buttoneliminar);
             this.groupBox2.Controls.Add(this.buttonCrear);
             this.groupBox2.Location = new System.Drawing.Point(503, 37);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(179, 252);
+            this.groupBox2.Size = new System.Drawing.Size(177, 326);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
+            // buttonbuscar
+            // 
+            this.buttonbuscar.Location = new System.Drawing.Point(43, 36);
+            this.buttonbuscar.Name = "buttonbuscar";
+            this.buttonbuscar.Size = new System.Drawing.Size(96, 45);
+            this.buttonbuscar.TabIndex = 3;
+            this.buttonbuscar.Text = "Buscar";
+            this.buttonbuscar.UseVisualStyleBackColor = true;
+            this.buttonbuscar.Click += new System.EventHandler(this.buttonbuscar_Click);
+            // 
+            // buttonactualizar
+            // 
+            this.buttonactualizar.Location = new System.Drawing.Point(43, 187);
+            this.buttonactualizar.Name = "buttonactualizar";
+            this.buttonactualizar.Size = new System.Drawing.Size(96, 46);
+            this.buttonactualizar.TabIndex = 2;
+            this.buttonactualizar.Text = "Actualizar";
+            this.buttonactualizar.UseVisualStyleBackColor = true;
+            this.buttonactualizar.Click += new System.EventHandler(this.buttonactualizar_Click);
+            // 
+            // buttoneliminar
+            // 
+            this.buttoneliminar.Location = new System.Drawing.Point(43, 257);
+            this.buttoneliminar.Name = "buttoneliminar";
+            this.buttoneliminar.Size = new System.Drawing.Size(96, 49);
+            this.buttoneliminar.TabIndex = 1;
+            this.buttoneliminar.Text = "Eliminar";
+            this.buttoneliminar.UseVisualStyleBackColor = true;
+            this.buttoneliminar.Click += new System.EventHandler(this.buttoneliminar_Click);
+            // 
             // buttonCrear
             // 
-            this.buttonCrear.Location = new System.Drawing.Point(33, 34);
+            this.buttonCrear.Location = new System.Drawing.Point(43, 108);
             this.buttonCrear.Name = "buttonCrear";
             this.buttonCrear.Size = new System.Drawing.Size(96, 50);
             this.buttonCrear.TabIndex = 0;
@@ -224,23 +280,25 @@
             this.buttonCrear.UseVisualStyleBackColor = true;
             this.buttonCrear.Click += new System.EventHandler(this.buttonCrear_Click);
             // 
-            // button2
+            // buttonnext
             // 
-            this.button2.Location = new System.Drawing.Point(43, 110);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonnext.Location = new System.Drawing.Point(59, 117);
+            this.buttonnext.Name = "buttonnext";
+            this.buttonnext.Size = new System.Drawing.Size(87, 45);
+            this.buttonnext.TabIndex = 1;
+            this.buttonnext.Text = "Siguiente";
+            this.buttonnext.UseVisualStyleBackColor = true;
+            this.buttonnext.Click += new System.EventHandler(this.buttonnext_Click);
             // 
-            // button3
+            // buttonanterior
             // 
-            this.button3.Location = new System.Drawing.Point(43, 187);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonanterior.Location = new System.Drawing.Point(59, 189);
+            this.buttonanterior.Name = "buttonanterior";
+            this.buttonanterior.Size = new System.Drawing.Size(87, 46);
+            this.buttonanterior.TabIndex = 2;
+            this.buttonanterior.Text = "Anterior";
+            this.buttonanterior.UseVisualStyleBackColor = true;
+            this.buttonanterior.Click += new System.EventHandler(this.buttonanterior_Click);
             // 
             // Form1
             // 
@@ -252,7 +310,7 @@
             this.Controls.Add(this.comboBoxaldea);
             this.Controls.Add(this.comboBoxrango);
             this.Controls.Add(this.dateTimePickerfechaagregado);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.numericUpDownnivelpoder);
             this.Controls.Add(this.textBoxrango);
             this.Controls.Add(this.textBoxaldea);
@@ -268,8 +326,10 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownnivelpoder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -291,15 +351,20 @@
         private System.Windows.Forms.TextBox textBoxaldea;
         private System.Windows.Forms.TextBox textBoxrango;
         private System.Windows.Forms.NumericUpDown numericUpDownnivelpoder;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView dataGridViewPersonajes;
         private System.Windows.Forms.DateTimePicker dateTimePickerfechaagregado;
         private System.Windows.Forms.ComboBox comboBoxrango;
         private System.Windows.Forms.ComboBox comboBoxaldea;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button buttonCrear;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonactualizar;
+        private System.Windows.Forms.Button buttoneliminar;
+        private System.Windows.Forms.Button buttoncargar;
+        private Button buttonbuscar;
+        private Button buttonnext;
+        private Button buttonanterior;
     }
 }
 
