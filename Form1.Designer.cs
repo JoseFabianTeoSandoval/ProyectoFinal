@@ -219,9 +219,9 @@ namespace ProyectoFinal
             // 
             // buttoncargar
             // 
-            this.buttoncargar.Location = new System.Drawing.Point(59, 50);
+            this.buttoncargar.Location = new System.Drawing.Point(50, 40);
             this.buttoncargar.Name = "buttoncargar";
-            this.buttoncargar.Size = new System.Drawing.Size(87, 42);
+            this.buttoncargar.Size = new System.Drawing.Size(96, 52);
             this.buttoncargar.TabIndex = 0;
             this.buttoncargar.Text = "Cargar";
             this.buttoncargar.UseVisualStyleBackColor = true;
@@ -238,7 +238,7 @@ namespace ProyectoFinal
             this.groupBox2.Size = new System.Drawing.Size(177, 326);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "opciones";
             // 
             // buttonbuscar
             // 
@@ -282,9 +282,9 @@ namespace ProyectoFinal
             // 
             // buttonnext
             // 
-            this.buttonnext.Location = new System.Drawing.Point(59, 117);
+            this.buttonnext.Location = new System.Drawing.Point(50, 108);
             this.buttonnext.Name = "buttonnext";
-            this.buttonnext.Size = new System.Drawing.Size(87, 45);
+            this.buttonnext.Size = new System.Drawing.Size(96, 54);
             this.buttonnext.TabIndex = 1;
             this.buttonnext.Text = "Siguiente";
             this.buttonnext.UseVisualStyleBackColor = true;
@@ -292,9 +292,9 @@ namespace ProyectoFinal
             // 
             // buttonanterior
             // 
-            this.buttonanterior.Location = new System.Drawing.Point(59, 189);
+            this.buttonanterior.Location = new System.Drawing.Point(50, 180);
             this.buttonanterior.Name = "buttonanterior";
-            this.buttonanterior.Size = new System.Drawing.Size(87, 46);
+            this.buttonanterior.Size = new System.Drawing.Size(96, 55);
             this.buttonanterior.TabIndex = 2;
             this.buttonanterior.Text = "Anterior";
             this.buttonanterior.UseVisualStyleBackColor = true;
